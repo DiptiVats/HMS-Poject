@@ -1,0 +1,72 @@
+.mainDiv {
+  margin-top: 2px;
+  color: grey;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+  z-index: 3;
+  margin-top: -11px;
+  margin-left: -8px;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  color: grey;
+}
+
+.sideBarIcon {
+  color: grey;
+  height: 20px;
+  width: 20px;
+  padding: 6px;
+  margin-right: 12px;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+.sideBarIcon:hover {
+  color: white;
+  background-color: orange;
+}
+.sideBarIcon:hover div {
+  color: orange;
+}
+.section:hover > div {
+  color: orange;
+}
+
+.section:hover .sideBarIcon {
+  background-color: orange;
+  color: white;
+}
+
+.active {
+  color: orange;
+}
+
+.activeNav {
+  color: orange;
+  font-weight: bold;
+}
+.activeIcon {
+  background-color: orange;
+  color: white;
+}
+.textColor {
+  color: orange;
+  font-weight: bold;
+}
+.bgColor {
+  background-color: orange;
+  color: white;
+  height: 20px;
+  width: 20px;
+  padding: 6px;
+  margin-right: 12px;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+.list:hover > .horizontalRow {
+  color: orange;
+}

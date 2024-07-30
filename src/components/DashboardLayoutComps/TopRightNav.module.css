@@ -1,0 +1,30 @@
+.buttonWrapper {
+  width: 100px;
+  height: 2.4rem;
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  margin-left: 3px;
+  background-color: #22252a;
+  border-bottom: 1px solid rgb(80, 80, 80);
+}
+.buttonIcon {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: rgb(174, 174, 174);
+  cursor: pointer;
+  transition-duration: 0.4s;
+  margin-top: -10px;
+}
+.buttonIcon:hover {
+  color: white;
+}
+.icon {
+  font-weight: bold;
+}
+.logoutButton:active,
+.logoutButton:link,
+.logoutButton:visited {
+  color: rgb(174, 174, 174);
+}

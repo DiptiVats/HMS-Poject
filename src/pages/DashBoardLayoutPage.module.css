@@ -1,0 +1,78 @@
+.mainNavWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.firstPartition,
+.secondPartition {
+  display: flex;
+  flex-direction: column;
+}
+.fix {
+  width: 15rem;
+}
+.firstPartition {
+  position: fixed;
+  width: 14%;
+  margin: 0;
+}
+
+.secondPartition {
+  width: 85%;
+  margin: 0;
+  margin-left: 1.6em;
+}
+
+.topLeftNav,
+.topRightNav {
+  height: 3.3rem;
+  margin: 0;
+  background-color: #22252a;
+}
+
+.topLeftNav {
+  border-bottom: 1px solid var(--grey--border-color);
+}
+
+.topLeftImg {
+  height: 3rem;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-top: -1px;
+  margin-bottom: 1px;
+}
+
+.topRightNav {
+  position: fixed;
+  width: 82%;
+  padding-left: 2rem;
+  height: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  top: 0rem;
+  left: 14rem;
+  background-color: #22252a;
+  z-index: 4;
+}
+
+/* ---- Animations------*/
+.topLeftImg:hover {
+  animation: rotateImage 2s infinite linear;
+}
+
+.bottomRightNav {
+  position: absolute;
+  width: 83%;
+  top: 5rem;
+  left: 15rem;
+}
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- temporary formattings ---- */

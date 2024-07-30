@@ -1,0 +1,49 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.headerElem1_part1 {
+  margin-bottom: 10px;
+  color: grey;
+}
+.headerElem1_part2 {
+  margin-top: -1px;
+  color: grey;
+}
+.headerElem1_part2 > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.headerElem2 {
+  width: 25%;
+  background-color: #282b2f;
+  margin: 1.5rem 1rem;
+  height: 5rem;
+  border-top: 1px solid rgb(88, 88, 88);
+  border-radius: 4px;
+  padding: 0.2rem 3rem;
+  color: rgb(163, 163, 163);
+}
+.headerElem2 > div {
+  font-size: 1.2rem;
+}
+.headerElem2 > p {
+  margin-top: -1px;
+}
+.icon {
+  color: #007bff;
+}
+.headerElem3 > p {
+  font-size: 0.9rem;
+  color: rgb(197, 197, 197);
+}
+
+.headerElem3 > input {
+  padding: 0.4rem 0.6rem;
+  margin-top: -4rem;
+  background-color: #282b2f;
+  border: 1px solid rgb(87, 87, 87);
+  border-radius: 3px;
+  margin-right: 1rem;
+  color: grey;
+}

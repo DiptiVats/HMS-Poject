@@ -1,0 +1,183 @@
+.mainWrapper {
+  margin-left: 2.5rem;
+  margin-top: -2rem;
+}
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.patientText {
+  font-size: 1.2rem;
+
+  color: rgb(153, 153, 153);
+}
+.hospitalName {
+  color: rgb(145, 145, 145);
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+.firstGrid {
+  display: flex;
+  width: 99%;
+}
+.firstGridElem1,
+.firstGridElem2 {
+  display: flex;
+  width: 50%;
+}
+.firstGridElem1 > input {
+  width: 94%;
+}
+.firstGridElem2 > input {
+  width: 45%;
+}
+.firstGrid > div > input {
+  margin-right: 1.3rem;
+  border: 1px solid rgb(85, 85, 85);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  height: 1.2rem;
+  background-color: #22252a;
+  color: grey;
+}
+.secondGrid {
+  display: flex;
+  width: 99%;
+  margin-top: -1px;
+}
+.secondGridElem1 {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.firstPart {
+  width: 49%;
+}
+.secondPart {
+  display: flex;
+  flex-direction: row;
+  width: 49%;
+  margin-top: -1px;
+  color: grey;
+}
+.secondGridElem2 {
+  width: 50%;
+}
+.firstPart > input {
+  margin-right: 1.3rem;
+  border: 1px solid rgb(85, 85, 85);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  height: 1.2rem;
+  width: 90%;
+  background-color: #22252a;
+  color: grey;
+  margin-top: -15px;
+}
+.secondPart > div > input {
+  width: 4.5rem;
+  height: 1.3rem;
+  margin-left: -10px;
+}
+.secondPart > span {
+  margin-top: 1.1rem;
+  margin-left: 1rem;
+}
+.secondPart > p {
+  margin-left: -0.5rem;
+}
+.secondGridElem2 > input {
+  margin-right: 1.3rem;
+  margin-top: 7px;
+  border: 1px solid rgb(85, 85, 85);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  height: 1.2rem;
+  width: 93.5%;
+  background-color: #22252a;
+  color: grey;
+}
+.thirdGrid {
+  margin-top: -1px;
+}
+.thirdGrid > input {
+  width: 22%;
+  margin-right: 1rem;
+  margin-right: 1.3rem;
+  margin-top: 7px;
+  border: 1px solid rgb(85, 85, 85);
+  padding: 0.4rem 0.4rem;
+  border-radius: 4px;
+  height: 1.2rem;
+  background-color: #22252a;
+  color: grey;
+}
+input:focus {
+  border-color: grey;
+  color: orange;
+}
+.fourthGrid {
+  display: flex;
+  flex-direction: row;
+  margin-top: -1px;
+}
+.fourthGrid > div > p {
+  color: rgb(163, 163, 163);
+}
+.fourthGridElem1,
+.fourthGridElem2 {
+  width: 50%;
+}
+.fourthGridElem1 > input,
+.fourthGridElem2 > input {
+  width: 95%;
+  height: 6rem;
+  margin-top: -15px;
+  background-color: #22252a;
+  border: 1px solid rgb(87, 87, 87);
+}
+.fifthGrid > div {
+  width: 50%;
+}
+
+.fifthGrid > div > input {
+  width: 95%;
+  height: 6rem;
+  background-color: #22252a;
+  border: 1px solid rgb(87, 87, 87);
+  margin-top: -15px;
+}
+.fifthGrid > p {
+  color: rgb(165, 165, 165);
+}
+.sixthGrid > button[type="button"] {
+  color: white;
+  background-color: grey;
+}
+.sixthGrid > button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  padding: 0.1rem 1.2rem;
+  height: 2.2rem;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+}
+.sixthGrid > button[type="submit"] {
+  background-color: #007bff;
+  margin-left: 1rem;
+}
+
+.sixthGrid > button[type="submit"]:hover {
+  background-color: #004c9e;
+}
+.sixthGrid > button[type="button"]:hover {
+  color: white;
+  background-color: rgb(88, 88, 88);
+}

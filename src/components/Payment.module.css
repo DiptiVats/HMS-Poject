@@ -1,0 +1,102 @@
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  margin-top: -1rem;
+}
+.patientText {
+  font-size: 1.2rem;
+  color: rgb(153, 153, 153);
+}
+.hospitalName {
+  color: rgb(145, 145, 145);
+  margin-left: 1.5rem;
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+.roundedButton {
+  background-color: #007bff;
+  color: rgb(201, 201, 201);
+  padding: 0.5rem 0.6rem;
+  border: none;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-right: 2rem;
+  width: 11rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  color: white;
+}
+
+.roundedButton:hover {
+  background-color: #005ec2;
+}
+.firstGrid {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  color: rgb(155, 155, 155);
+  margin-left: 1.7rem;
+  margin-top: -5px;
+}
+.firstGridElem {
+  display: flex;
+  flex-direction: column;
+  width: 34%;
+}
+.firstGridElem > div > input {
+  width: 90%;
+  min-width: 17rem;
+  margin-right: 1rem;
+  padding: 0.4rem 0.6rem;
+  height: 1.2rem;
+  background-color: #22252a;
+  border: 1px solid rgb(73, 73, 73);
+  color: grey;
+}
+.firstGridElem > div > select {
+  height: 2.1rem;
+  width: 90%;
+  background-color: #22252a;
+  border: 1px solid rgb(73, 73, 73);
+  color: grey;
+}
+.firstGridElem > div > select:focus {
+  color: orange;
+}
+.firstGridElem > div > input:focus {
+  color: orange;
+}
+.inputs {
+  margin-top: -1px;
+}
+.secondGrid {
+  margin-left: 1rem;
+}
+.secondGrid > button {
+  border-radius: 6px;
+  width: 5rem;
+  margin-left: 0.8rem;
+  margin-top: 0.3rem;
+}
+.thirdGrid {
+  margin-left: 1.5rem;
+  margin-top: 3rem;
+}
+.thirdGrid > p {
+  color: orange;
+}
+.thirdGrid > table > thead,
+table > th,
+td {
+  padding-left: 0.5rem;
+}
+.icon {
+  color: #005ec2;
+}

@@ -1,0 +1,56 @@
+.mainWrapper {
+  margin-left: 1.7rem;
+  margin-top: -20px;
+}
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.patientText {
+  font-size: 1.2rem;
+
+  color: rgb(153, 153, 153);
+}
+.roundedButton {
+  background-color: #007bff;
+  color: rgb(201, 201, 201);
+  padding: 0.5rem 0.6rem;
+  border: none;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-right: 2rem;
+  width: 8.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.roundedButton:hover {
+  background-color: #005ec2;
+}
+
+.hospitalName {
+  color: rgb(145, 145, 145);
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+table {
+  width: 98%;
+  margin-top: 12px;
+  border-collapse: collapse;
+}
+tr {
+  height: 3rem;
+}
+th,
+td {
+  border: 1px solid #22252a;
+  background-color: #282b2f;
+  color: grey;
+  padding: 0.4rem 0.6rem;
+}

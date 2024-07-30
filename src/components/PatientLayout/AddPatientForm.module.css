@@ -1,0 +1,101 @@
+.formWrapper {
+  margin-top: -3.7rem;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+}
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.patientText {
+  font-size: 1.2rem;
+
+  color: rgb(153, 153, 153);
+}
+.roundedButton {
+  background-color: #007bff;
+  color: rgb(201, 201, 201);
+  padding: 0.5rem 0.6rem;
+  border: none;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-right: 2rem;
+  width: 8.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.roundedButton:hover {
+  background-color: #005ec2;
+}
+
+.hospitalName {
+  color: rgb(145, 145, 145);
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+.formSection {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #282b2f;
+  border-radius: 3px;
+  border-top: 1px solid rgb(68, 68, 68);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 1.4rem;
+  padding-top: 0.5rem;
+}
+
+.inputField {
+  width: 32rem;
+  background-color: #282b2f;
+  border: 1px solid rgb(68, 68, 68);
+  margin-left: 1.5rem;
+  height: 0.5rem;
+  padding: 0.8rem 1rem;
+}
+
+.inputField:focus {
+  border: 1px solid rgb(110, 110, 110);
+  color: orange;
+  outline: none;
+}
+
+.searchButton {
+  background-color: #007bff;
+}
+.resetButton {
+  background-color: #28a745;
+}
+.resetButton:hover {
+  background-color: #1f8a38;
+}
+.searchButton:hover {
+  background-color: #005ec2;
+}
+.searchButton,
+.resetButton {
+  color: rgb(221, 221, 221);
+  border: none;
+  width: 19rem;
+  height: 2rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin-left: 2.5rem;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+@media screen and (min-width: 80%) {
+  body {
+    background-color: red;
+  }
+}

@@ -1,0 +1,124 @@
+.mainWrapper {
+  margin-left: 1.7rem;
+}
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.patientText {
+  font-size: 1.2rem;
+
+  color: rgb(153, 153, 153);
+}
+
+.hospitalName {
+  color: rgb(145, 145, 145);
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+.firstGrid {
+  display: flex;
+  flex-direction: row;
+}
+
+.firstGrid > select {
+  width: 49%;
+  height: 2.5rem;
+  background-color: #22252a;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgb(85, 85, 85);
+  color: grey;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.firstGrid:active {
+  outline: none;
+  color: orange;
+}
+select[id="second"] {
+  margin-left: 2rem;
+}
+select:focus {
+  color: orange;
+}
+.secondGrid {
+  display: flex;
+  flex-direction: row;
+}
+
+.secondGrid > input {
+  width: 49%;
+  height: 1.5rem;
+  background-color: #22252a;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgb(85, 85, 85);
+  color: grey;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+input[id="sec"] {
+  margin-left: 2rem;
+}
+.thirdGrid {
+  display: flex;
+  flex-direction: row;
+  margin-top: -1px;
+  color: grey;
+}
+.thirdGrid > div {
+  width: 50%;
+}
+.thirdGrid > div > input {
+  font-size: 1rem;
+  width: 97%;
+  height: 1.5rem;
+  background-color: #22252a;
+  border: 1px solid rgb(83, 83, 83);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+.thirdGridElem {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin-left: 2.5rem;
+}
+.thirdGridElem > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.thirdGridElem > div > input {
+  width: 1rem;
+}
+.sixthGrid > button[type="button"] {
+  color: white;
+  background-color: grey;
+}
+.sixthGrid > button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  padding: 0.1rem 1.2rem;
+  height: 2.2rem;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+}
+.sixthGrid > button[type="submit"] {
+  background-color: #007bff;
+  margin-left: 1rem;
+}
+
+.sixthGrid > button[type="submit"]:hover {
+  background-color: #004c9e;
+}
+.sixthGrid > button[type="button"]:hover {
+  color: white;
+  background-color: rgb(88, 88, 88);
+}

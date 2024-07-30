@@ -1,0 +1,53 @@
+.patientDetail {
+  display: flex;
+  flex-direction: column;
+}
+.patientTable > table {
+  width: 98%;
+  min-width: auto;
+  margin-left: 1rem;
+  margin-top: 5px;
+}
+.patientTable > table > thead > tr > td {
+  background-color: #282b2f;
+  color: rgb(255, 255, 255);
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+
+  border: 1px solid #282b2f;
+  border-collapse: collapse;
+  height: 3rem;
+  text-wrap: nowrap;
+}
+.patientTable > table > tbody > tr > td {
+  background-color: #282b2f;
+  color: rgb(110, 110, 110);
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #282b2f;
+  border-collapse: collapse;
+  height: 3rem;
+  text-wrap: nowrap;
+}
+td {
+  border: 1px solid grey;
+}
+td > a > button {
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+td > a > button:hover {
+  background-color: #0058b6;
+}
+.editIcon {
+  color: #0058b6;
+  font-size: 1.1rem;
+}
+.paymentIcon {
+  color: #007bff;
+}

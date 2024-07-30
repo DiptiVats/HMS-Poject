@@ -1,0 +1,7 @@
+#root {
+  background: transparent;
+  /* -- login page variables -- */
+  --form-text-color: #747474;
+  --grey--border-color: #3d3e42;
+  --form-input-text-size: 1.1rem;
+}

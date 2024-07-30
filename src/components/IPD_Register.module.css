@@ -1,0 +1,27 @@
+.topWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  margin-top: -2rem;
+}
+.patientText {
+  font-size: 1.2rem;
+
+  color: rgb(153, 153, 153);
+}
+
+.hospitalName {
+  color: rgb(145, 145, 145);
+  margin-left: 2rem;
+}
+.hospitalName > a {
+  color: #007bff;
+  text-decoration: none;
+}
+.hospitalName > a:hover {
+  color: #005ec2;
+}
+.paragraph {
+  margin-left: 2rem;
+  color: gray;
+}

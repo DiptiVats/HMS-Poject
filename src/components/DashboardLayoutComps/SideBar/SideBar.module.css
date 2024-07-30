@@ -1,0 +1,38 @@
+.topSideBar {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.userImg {
+  height: 2.5rem;
+  margin-top: -12px;
+  margin-left: 4px;
+  border-radius: 5px;
+}
+.userName > span {
+  display: block;
+}
+.userName {
+  margin-top: -1px;
+  margin-left: 15px;
+  color: rgb(158, 158, 158);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.dropdown {
+  font-size: 1.5rem;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: -4px;
+}
+.bottomSideBar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.2rem;
+  margin-left: 0.6rem;
+}
+.bottomSideBar > span {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: grey;
+}

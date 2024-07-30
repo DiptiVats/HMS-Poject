@@ -1,0 +1,37 @@
+.horizontalRow {
+  width: 5px;
+  position: absolute;
+  margin-left: -20px;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.unorderdLists {
+  margin-top: 50px;
+  display: block;
+  margin-left: -100px;
+  transition-duration: 1s;
+}
+.links {
+  text-decoration: none;
+  color: grey;
+}
+.list {
+  margin-top: 10px;
+  height: auto;
+}
+.list:hover > .horizontalRow {
+  width: 80%;
+  color: orange;
+}
+.links:hover {
+  color: orange;
+}
+.unorderdLists {
+  transition: all 1s;
+}
+.activeLink {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+}

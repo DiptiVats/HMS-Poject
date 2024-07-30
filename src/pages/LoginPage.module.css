@@ -1,0 +1,142 @@
+.logoImg {
+  margin-top: 10px;
+  height: 5.8rem;
+  border-radius: 0.3rem;
+}
+.mainAuth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.popup {
+  text-align: center;
+}
+
+.barPattern {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  margin-top: -1rem;
+}
+.barPattern > span {
+  height: 3px;
+  width: 20%;
+}
+.red {
+  background-color: rgb(248, 62, 78);
+}
+.indigo {
+  background-color: rgb(148, 58, 212);
+}
+.blue {
+  background-color: rgb(0, 162, 255);
+}
+.green {
+  background-color: rgb(112, 255, 112);
+}
+.orange {
+  background-color: rgb(255, 220, 62);
+}
+.loginForm {
+  background-color: #282b2f;
+  width: 25rem;
+  height: 27rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transform: scale(0.9);
+  border-top: 1px solid var(--form-text-color);
+  border-radius: 3px;
+  text-align: center;
+}
+.formText {
+  font-size: 1.7rem;
+  font-weight: 50;
+  color: rgb(184, 184, 184);
+}
+.inpFields {
+  border-radius: 3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.6rem 0.6rem;
+  height: 1.2rem;
+  width: 20rem;
+  border: 1px solid var(--grey--border-color);
+  font-size: var(--form-input-text-size);
+  background-color: #282b2f;
+  color: var(--form-text-color);
+}
+
+.inpFields:focus {
+  color: aqua;
+}
+
+.inpFields:active,
+.inpFields:focus {
+  border: 1px solid var(--grey--border-color);
+  outline: none;
+}
+
+.formOption {
+  width: 21rem;
+  padding-left: 0.4rem;
+  height: 2.4rem;
+  border-radius: 3rem;
+  font-weight: 50;
+  border-color: var(--grey--border-color);
+  font-size: var(--form-input-text-size);
+  background-color: #282b2f;
+  color: var(--form-text-color);
+  padding-right: 10px;
+}
+
+.formOption:focus {
+  color: aqua;
+  outline: none;
+}
+
+.formCheckbox {
+  text-align: left;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgb(161, 161, 161);
+  font-size: 1.1rem;
+}
+
+.inpCheckbox:focus {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.formButton {
+  width: 21rem;
+  border-radius: 3rem;
+  height: 2.5rem;
+  background-color: #007bff;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: rgb(224, 224, 224);
+}
+
+.icon {
+  color: rgb(184, 184, 184);
+}
+#registerLink,
+#forgotLink {
+  color: #2e93ff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+div {
+  margin-top: 1rem;
+}
+.formText3 {
+  margin-top: -14px;
+  color: rgb(184, 184, 184);
+  font-size: 1.1rem;
+}
