@@ -20,7 +20,6 @@ export default function Patient() {
 
   function handleResetData(e) {
     e.preventDefault();
-
     setPatientData(PATIENT_DATA);
   }
   return (
