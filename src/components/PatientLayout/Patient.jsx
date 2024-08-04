@@ -2,15 +2,35 @@ import { FaEdit } from "react-icons/fa";
 import { SlExclamation } from "react-icons/sl";
 import classes from "./Patient.module.css";
 import AddPatientForm from "./AddPatientForm";
-import { patientData } from "./patientData";
+import { PATIENT_DATA } from "./patientData";
 import { Link } from "react-router-dom";
-//import { collection, getDocs } from "firebase/firestore";
-//import { db } from "../../firebase";
+import { useState } from "react";
 export default function Patient() {
+  const [patientData, setPatientData] = useState(PATIENT_DATA);
+  const [addedCode, setAddedCode] = useState("");
+
+  function handleAddCode(code) {
+    setAddedCode(code);
+    console.log(addedCode);
+  }
+
+  function handlePatientData() {
+    setPatientData(PATIENT_DATA.filter((data) => data.code === addedCode));
+  }
+
+  function handleResetData(e) {
+    e.preventDefault();
+
+    setPatientData(PATIENT_DATA);
+  }
   return (
     <div className={classes.patientDetail}>
       <div>
-        <AddPatientForm />
+        <AddPatientForm
+          onEnteredCode={handleAddCode}
+          onSearchPatient={handlePatientData}
+          onReset={handleResetData}
+        />
       </div>
       <div className={classes.patientTable}>
         &nbsp; &nbsp; &nbsp;
@@ -33,51 +53,61 @@ export default function Patient() {
             </tr>
           </thead>
           <tbody>
-            {patientData.map((data) => (
-              <tr key={data.tokenNo}>
-                <td>{data.tokenNo}</td>
-                <td>{data.code}</td>
-                <td>
-                  {data.patientName} | {data.age} Yrs | {data.gender}
-                  <br />
-                  Adderss: {data.address} <br />
-                  Telephone: {data.telephone}
-                </td>
-                <td>
-                  {data.prevPaymentDetail ? (
-                    <span>
-                      {`Rs.${data.prevPaymentDetail}`}
-                      <SlExclamation className={classes.paymentIcon} />
-                    </span>
-                  ) : (
-                    "NIL"
-                  )}
-                </td>
-                <td>
-                  <Link to="/dashboard/admit">
-                    <button>Admit</button>
-                  </Link>
-                </td>
-                <td>
-                  <Link to="/dashboard/opd">
-                    <button>ODP</button>
-                  </Link>
-                </td>
-                <td>
-                  <Link to="/dashboard/make-payment">
-                    <button>Payment</button>
-                  </Link>
-                </td>
-                <td>
-                  <Link to="/dashboard/consent">
-                    <button>Consent</button>
-                  </Link>
-                </td>
-                <td>
-                  <FaEdit className={classes.editIcon} />
-                </td>
-              </tr>
-            ))}
+            {patientData.length > 0 ? (
+              patientData.map((data) => (
+                <tr key={data.tokenNo}>
+                  <td>{data.tokenNo}</td>
+                  <td>{data.code}</td>
+                  <td>
+                    {data.patientName} | {data.age} Yrs | {data.gender}
+                    <br />
+                    Adderss: {data.address} <br />
+                    Telephone: {data.telephone}
+                  </td>
+                  <td>
+                    {data.prevPaymentDetail ? (
+                      <span>
+                        {`Rs.${data.prevPaymentDetail}`}
+                        <SlExclamation className={classes.paymentIcon} />
+                      </span>
+                    ) : (
+                      "NIL"
+                    )}
+                  </td>
+                  <td>
+                    <Link to="/dashboard/admit">
+                      <button>Admit</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to="/dashboard/opd">
+                      <button>ODP</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to="/dashboard/make-payment">
+                      <button>Payment</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to="/dashboard/consent">
+                      <button>Consent</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <FaEdit className={classes.editIcon} />
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <th
+                style={{ borderTopWidth: "2rem", backgroundColor: "#22252a" }}
+                colSpan={9}
+              >
+                Please enter a valid code !
+              </th>
+            )}
+
             <tr></tr>
           </tbody>
         </table>

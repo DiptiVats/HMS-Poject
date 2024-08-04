@@ -1,4 +1,4 @@
-export const patientData = [
+export const PATIENT_DATA = [
   {
     tokenNo: 1,
     code: "ASD-5258",
@@ -11,7 +11,7 @@ export const patientData = [
   },
   {
     tokenNo: 2,
-    code: "ASD-5260",
+    code: "ASD-5261",
     patientName: "Komal Singh",
     age: 28,
     gender: "Female",
@@ -31,7 +31,7 @@ export const patientData = [
   },
   {
     tokenNo: 4,
-    code: "ASD-525",
+    code: "ASD-5253",
     patientName: "Kapil Sirohi",
     age: 36,
     gender: "Male",
@@ -41,7 +41,7 @@ export const patientData = [
   },
   {
     tokenNo: 5,
-    code: "ASD-525",
+    code: "ASD-5254",
     patientName: "Pankaj Gupta",
     age: 40,
     gender: "Male",
@@ -51,7 +51,7 @@ export const patientData = [
   },
   {
     tokenNo: 6,
-    code: "ASD-5260",
+    code: "ASD-5262",
     patientName: "Komal Singh",
     age: 28,
     gender: "Female",

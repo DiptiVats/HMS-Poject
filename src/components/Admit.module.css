@@ -45,6 +45,9 @@
   background-color: #22252a;
   color: grey;
 }
+.firstGrid > div > input:focus {
+  color: orange;
+}
 .secondGrid {
   display: flex;
   width: 99%;

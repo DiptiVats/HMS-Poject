@@ -89,12 +89,17 @@
   margin-left: 1.5rem;
   margin-top: 3rem;
 }
+.thirdGrid > table {
+  width: 97%;
+}
 .thirdGrid > p {
   color: orange;
 }
 .thirdGrid > table > thead,
 table > th,
 td {
+  border: 2px solid #22252a;
+
   padding-left: 0.5rem;
 }
 .icon {

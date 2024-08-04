@@ -3,8 +3,6 @@ import { IoIosLock } from "react-icons/io";
 import ohLogo from "../assets/oh_logo.jpg";
 import { motion } from "framer-motion";
 import { Link, Form, redirect } from "react-router-dom";
-import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 export default function LoginPage() {
   /* const email = useRef(null);
   const password = useRef(null);
@@ -133,7 +131,7 @@ export async function action({ request }) {
   console.log(dataToSend);
   try {
     const response = await fetch(
-      "https://dc68-2401-4900-1c0b-31ff-e8b2-1a4f-3522-a1d3.ngrok-free.app/authentication/authenticate",
+      "https://2fff-2402-3a80-41c3-d684-edaa-75be-1878-d6f7.ngrok-free.app/authentication/authenticate",
       {
         method: "POST",
         headers: {
