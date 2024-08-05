@@ -4,9 +4,8 @@ import classes from "./Patient.module.css";
 import AddPatientForm from "./AddPatientForm";
 import { Link, useLoaderData } from "react-router-dom";
 export default function Patient() {
-  const patientData = useLoaderData();
-  console.log(patientData);
-
+  const patientData 
+ 
   return (
     <div className={classes.patientDetail}>
       <div>
