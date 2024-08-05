@@ -4,15 +4,18 @@ export default function OPD_Main() {
   return (
     <div className={classes.opdWrapper}>
       <OPD_Header />
-      <div>
-        <div>
+      <div className={classes.opdMainWrapper}>
+        <div className={classes.firstWrapper}>
           <p>Notes</p>
+          <div></div>
         </div>
-        <div>
+        <div className={classes.secondWrapper}>
           <p>Diagnosis</p>
+          <div></div>
         </div>
-        <div>
+        <div className={classes.thirdWrapper}>
           <p>Treatment</p>
+          <div></div>
         </div>
       </div>
     </div>

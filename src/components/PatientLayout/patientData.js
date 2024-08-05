@@ -1,6 +1,5 @@
 export const PATIENT_DATA = [
   {
-    tokenNo: 1,
     code: "ASD-5258",
     patientName: "Amit Bhardwaj",
     age: 32,
@@ -10,7 +9,6 @@ export const PATIENT_DATA = [
     prevPaymentDetail: 2000,
   },
   {
-    tokenNo: 2,
     code: "ASD-5261",
     patientName: "Komal Singh",
     age: 28,
@@ -20,7 +18,6 @@ export const PATIENT_DATA = [
     prevPaymentDetail: null,
   },
   {
-    tokenNo: 3,
     code: "ASD-5272",
     patientName: "Satish Dhar",
     age: 45,
@@ -30,7 +27,6 @@ export const PATIENT_DATA = [
     prevPaymentDetail: null,
   },
   {
-    tokenNo: 4,
     code: "ASD-5253",
     patientName: "Kapil Sirohi",
     age: 36,
@@ -40,7 +36,6 @@ export const PATIENT_DATA = [
     prevPaymentDetail: null,
   },
   {
-    tokenNo: 5,
     code: "ASD-5254",
     patientName: "Pankaj Gupta",
     age: 40,
@@ -50,7 +45,6 @@ export const PATIENT_DATA = [
     prevPaymentDetail: 3000,
   },
   {
-    tokenNo: 6,
     code: "ASD-5262",
     patientName: "Komal Singh",
     age: 28,

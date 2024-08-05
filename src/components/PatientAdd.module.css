@@ -78,8 +78,11 @@ input[name="female"] {
 .thirdGrid > select {
   color: grey;
   width: 23%;
+  margin-top: 1px;
+  height: 2.3rem;
   background-color: #22252a;
   border: 1px solid rgb(77, 77, 77);
+  border-radius: 2px;
 }
 .fourthGrid {
   display: flex;

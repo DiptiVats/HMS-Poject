@@ -3,3 +3,22 @@
   flex-direction: column;
   margin: -3rem 2.5rem;
 }
+.opdMainWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 99%;
+}
+.secondWrapper {
+  width: 40%;
+  margin-left: 1rem;
+}
+.firstWrapper,
+.thirdWrapper {
+  width: 30%;
+}
+.thirdWrapper {
+  margin-left: 1rem;
+}
+.opdMainWrapper > div > p {
+  color: orange;
+}

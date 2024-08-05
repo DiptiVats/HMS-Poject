@@ -141,7 +141,6 @@ export async function action({ request }) {
       }
     );
     console.log(dataToSend);
-    console.log(token);
     if (response.ok) {
       return redirect("/dashboard");
     }

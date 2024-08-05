@@ -1,23 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./AddPatientForm.module.css";
-import { useEffect, useState } from "react";
 import { Form } from "react-router-dom";
-export default function AddPatientForm({
-  onEnteredCode,
-  onSearchPatient,
-  onReset,
-}) {
-  const [enteredCode, setEnteredCode] = useState("");
-
-  function handleEnteredCode(event) {
-    let val = event.target.value;
-    setEnteredCode((prevState) => (prevState = val));
-    //console.log(enteredCode);
-  }
-  useEffect(() => {
-    onEnteredCode(enteredCode);
-  }, [enteredCode]);
-
+export default function AddPatientForm() {
   return (
     <div className={classes.formWrapper}>
       <div className={classes.topWrapper}>
@@ -40,23 +24,16 @@ export default function AddPatientForm({
             type="text"
             placeholder="Enter Code to search patient"
             className={classes.inputField}
-            onChange={handleEnteredCode}
             required
           />
         </div>
         <div>
-          <button
-            className={classes.searchButton}
-            type="submit"
-            onClick={onSearchPatient}
-          >
+          <button className={classes.searchButton} type="submit">
             Search
           </button>
         </div>
         <div>
-          <button className={classes.resetButton} onClick={onReset}>
-            Reset All
-          </button>
+          <button className={classes.resetButton}>Reset All</button>
         </div>
       </Form>
     </div>

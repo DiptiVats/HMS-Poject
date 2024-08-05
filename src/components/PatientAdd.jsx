@@ -1,5 +1,5 @@
 import classes from "./PatientAdd.module.css";
-import { Form, json, redirect } from "react-router-dom";
+import { Form, json, redirect, useActionData } from "react-router-dom";
 import { Link } from "react-router-dom";
 export default function PatientAdd() {
   return (
@@ -47,7 +47,12 @@ export default function PatientAdd() {
           />
           <input type="text" name="nextkin" placeholder="Nextkin" />
           <select name="bloodGroup">
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
             <option>o+</option>
+            <option>o-</option>
             <option>AB+</option>
             <option>AB-</option>
           </select>
@@ -61,7 +66,7 @@ export default function PatientAdd() {
         <div className={classes.fifthGrid}>
           <div>Note</div>
           <div>
-            <textarea></textarea>
+            <textarea name="patNote"></textarea>
           </div>
         </div>
         {/* --------------------- sixth grid ----------------*/}
@@ -81,30 +86,32 @@ export async function action({ request }) {
   const data = await request.formData();
   const dataToSend = {
     firstName: data.get("firstName"),
-    secondName: data.get("secondName"),
+    lastName: data.get("secondName"),
     age: data.get("age"),
-    gender: data.get("gender"),
+    patSex: data.get("gender"),
     address: data.get("address"),
     city: data.get("city"),
     telephone: data.get("telephone"),
-    nextkin: data.get("nextkin"),
-    bloodGroup: data.get("bloodGroup"),
+    nextKin: data.get("nextkin"),
+    bloodType: data.get("bloodGroup"),
     fatherName: data.get("fatherName"),
     motherName: data.get("motherName"),
-    taxNumID: data.get("taxNumID"),
+    taxCode: data.get("taxNumID"),
+    patNote: data.get("patNote"),
+    timeStamp: new Date().toISOString(),
   };
-
-  const response = await fetch("http://localhost:3002/HMS/fetchPatientData", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(dataToSend),
-  });
-  console.log(dataToSend);
-
-  if (response.ok) {
-    return redirect("/dashboard");
+  try {
+    const response = await fetch("", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    });
+    return response;
+  } catch (err) {
+    console.log(err);
   }
-  return null;
+  console.log(dataToSend);
+  return dataToSend;
 }

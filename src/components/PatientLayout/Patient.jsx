@@ -2,35 +2,15 @@ import { FaEdit } from "react-icons/fa";
 import { SlExclamation } from "react-icons/sl";
 import classes from "./Patient.module.css";
 import AddPatientForm from "./AddPatientForm";
-import { PATIENT_DATA } from "./patientData";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 export default function Patient() {
-  const [patientData, setPatientData] = useState(PATIENT_DATA);
-  const [addedCode, setAddedCode] = useState("");
+  const patientData = useLoaderData();
+  console.log(patientData);
 
-  function handleAddCode(code) {
-    setAddedCode(code);
-    console.log(addedCode);
-  }
-
-  function handlePatientData() {
-    setPatientData(PATIENT_DATA.filter((data) => data.code === addedCode));
-  }
-
-  function handleResetData(e) {
-    e.preventDefault();
-
-    setPatientData(PATIENT_DATA);
-  }
   return (
     <div className={classes.patientDetail}>
       <div>
-        <AddPatientForm
-          onEnteredCode={handleAddCode}
-          onSearchPatient={handlePatientData}
-          onReset={handleResetData}
-        />
+        <AddPatientForm />
       </div>
       <div className={classes.patientTable}>
         &nbsp; &nbsp; &nbsp;
@@ -38,7 +18,7 @@ export default function Patient() {
         <table>
           <thead>
             <tr>
-              <td>Token No.</td>
+              <td>Sr No.</td>
               <td>Code</td>
               <td>Patient Detail</td>
               <td>
@@ -54,12 +34,12 @@ export default function Patient() {
           </thead>
           <tbody>
             {patientData.length > 0 ? (
-              patientData.map((data) => (
-                <tr key={data.tokenNo}>
-                  <td>{data.tokenNo}</td>
-                  <td>{data.code}</td>
+              patientData.map((data, index) => (
+                <tr key={[index + 1]}>
+                  <td>{[index + 1]}</td>
+                  <td>{data.tokenId}</td>
                   <td>
-                    {data.patientName} | {data.age} Yrs | {data.gender}
+                    {data.name} | {data.age} Yrs | {data.gender}
                     <br />
                     Adderss: {data.address} <br />
                     Telephone: {data.telephone}
@@ -128,13 +108,21 @@ export default function Patient() {
 */
 
 export async function loader() {
-  console.log("Fetching patient data ......");
-  const response = await fetch("http://localhost:3002/HMS/getPatientData");
-  const resData = await response.json();
-  console.log(resData);
-  if (response.ok) {
-    console.log("Data successfully fetched!");
+  try {
+    console.log("Fetching patient data......");
+    const response = await fetch(
+      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadAllPatient",
+      {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+      }
+    );
+    const resData = await response.json();
+    return resData;
+  } catch (err) {
+    console.log(err);
+    return err;
   }
-  console.log(resData);
-  return resData;
 }

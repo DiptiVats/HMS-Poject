@@ -46,6 +46,7 @@ td > a > button:hover {
 .editIcon {
   color: #0058b6;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 .paymentIcon {
   color: #007bff;
