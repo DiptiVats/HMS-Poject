@@ -4,6 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 export default function Medicine() {
   const medicineList = useLoaderData();
+  console.log(medicineList);
   return (
     <div className={classes.mainWrapper}>
       <div className={classes.topWrapper}>
@@ -37,14 +38,14 @@ export default function Medicine() {
         </thead>
         <tbody>
           {medicineList.map((data) => (
-            <tr key={data.SrNo}>
-              <td>{data.SrNo}</td>
-              <td>{data.code}</td>
-              <td>{data.category}</td>
+            <tr key={data.medId}>
+              <td>{data.medId}</td>
+              <td>{data.medCode}</td>
+              <td>{data.medCat}</td>
               <td>{data.shortDesc}</td>
-              <td>{data.LongDesc}</td>
-              <td>{data.dispOrder}</td>
-              <td>{data.side}</td>
+              <td>{data.longDesc}</td>
+              <td>{data.disOrder}</td>
+              <td>{data.medSide}</td>
               <td>
                 <FaEdit style={{ color: "#007bff" }} />
                 &nbsp; &nbsp;
@@ -59,7 +60,10 @@ export default function Medicine() {
 }
 
 export async function loader() {
-  const response = await fetch("http://localhost:3002/HMS/getMedicineData");
+  const response = await fetch(
+    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Medicine/loadAllMedicines",
+    { method: "POST" }
+  );
   console.log("data Fetched");
   const resData = response.json();
   console.log(resData);

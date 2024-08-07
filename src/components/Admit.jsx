@@ -78,7 +78,6 @@ export default function Admit() {
         </div>
       </div>
       {/* --------- sixth grid* ---------------*/}
-
       <div className={classes.sixthGrid}>
         <Link to="..">
           <button type="button">Cancel</button>

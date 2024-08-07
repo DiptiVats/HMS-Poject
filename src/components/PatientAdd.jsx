@@ -100,15 +100,20 @@ export async function action({ request }) {
     patNote: data.get("patNote"),
     timeStamp: new Date().toISOString(),
   };
+  console.log(dataToSend);
   try {
-    const response = await fetch("", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataToSend),
-    });
-    return response;
+    const response = await fetch(
+      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/registerPatient",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      }
+    );
+    console.log(response);
+    return redirect("/dashboard");
   } catch (err) {
     console.log(err);
   }

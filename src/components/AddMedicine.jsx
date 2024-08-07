@@ -78,22 +78,23 @@ export default function AddMedicine() {
 export async function action({ request }) {
   const data = await request.formData();
   const dataToSend = {
-    medicineCode: data.get("medicineCode"),
-    medicineCatagory: data.get("medicineCatagory"),
-    medicineShortDesc: data.get("medicineShortDesc"),
-    displayOrder: data.get("displayOrder"),
-    medicineLongDesc: data.get("medicineLongDesc"),
-    direction: data.get("direction"),
+    disOrder: data.get("displayOrder"),
+    longDesc: data.get("medicineLongDesc"),
+    medCat: data.get("medicineCatagory"),
+    medCode: data.get("medicineCode"),
+    medSide: data.get("direction"),
+    shortDesc: data.get("medicineShortDesc"),
   };
   console.log(dataToSend);
-  const response = await fetch("http://localhost:3002/HMS/fetchMedicineData", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(dataToSend),
-  });
-  return json(response), redirect("/dashboard/medicine");
+  const response = await fetch(
+    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Medicine/addMedicine ",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    }
+  );
+  return response.json(), redirect("/dashboard/medicine");
 }
-
-//https://console.firebase.google.com/project/PROJECT_NAME/settings/general/

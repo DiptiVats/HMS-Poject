@@ -4,8 +4,10 @@ import classes from "./Patient.module.css";
 import AddPatientForm from "./AddPatientForm";
 import { Link, useLoaderData } from "react-router-dom";
 export default function Patient() {
-  const patientData 
- 
+  const Data = useLoaderData();
+  const patientData = Data;
+
+  console.log(patientData);
   return (
     <div className={classes.patientDetail}>
       <div>
@@ -34,7 +36,7 @@ export default function Patient() {
           <tbody>
             {patientData.length > 0 ? (
               patientData.map((data, index) => (
-                <tr key={[index + 1]}>
+                <tr key={data.tokenId}>
                   <td>{[index + 1]}</td>
                   <td>{data.tokenId}</td>
                   <td>
@@ -79,15 +81,15 @@ export default function Patient() {
                 </tr>
               ))
             ) : (
-              <th
-                style={{ borderTopWidth: "2rem", backgroundColor: "#22252a" }}
-                colSpan={9}
-              >
-                Please enter a valid code !
-              </th>
+              <tr>
+                <th
+                  style={{ borderTopWidth: "2rem", backgroundColor: "#22252a" }}
+                  colSpan={9}
+                >
+                  Please enter a valid code !
+                </th>
+              </tr>
             )}
-
-            <tr></tr>
           </tbody>
         </table>
       </div>
@@ -106,18 +108,29 @@ export default function Patient() {
 }
 */
 
-export async function loader() {
+export async function loader({ request }) {
+  const CurrentUrl = new URL(request.url);
+  const param = Object.fromEntries(CurrentUrl.searchParams.entries());
+  console.log(param);
+  let Url =
+    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadAllPatient";
+  let Body = {};
+  if (param.patId) {
+    Url =
+      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadPatient";
+    Body = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(param),
+    };
+  }
   try {
     console.log("Fetching patient data......");
-    const response = await fetch(
-      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadAllPatient",
-      {
-        method: "POST",
-        headers: {
-          "content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(Url, {
+      method: "POST",
+      ...Body,
+    });
     const resData = await response.json();
     return resData;
   } catch (err) {

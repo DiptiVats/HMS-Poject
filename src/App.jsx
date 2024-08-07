@@ -19,8 +19,6 @@ import MakePayment from "./components/MakePayment";
 import Admit from "./components/Admit";
 import Consent from "./components/Consent";
 import OPD_Main from "./components/OPD/OPD_Main";
-import { PATIENT_DATA } from "./components/PatientLayout/patientData";
-import { useState } from "react";
 
 const router = createBrowserRouter([
   { path: "", element: <LoginPage />, action: loginFun },
@@ -52,7 +50,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [addPatientData, setAddPatientData] = useState(PATIENT_DATA);
   return <RouterProvider router={router}></RouterProvider>;
 }
 

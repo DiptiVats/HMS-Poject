@@ -22,3 +22,7 @@
 .opdMainWrapper > div > p {
   color: orange;
 }
+
+.firstWrapper > div {
+  color: grey;
+}

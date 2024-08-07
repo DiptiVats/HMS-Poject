@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import classes from "./AddPatientForm.module.css";
-import { Form } from "react-router-dom";
 export default function AddPatientForm() {
   return (
     <div className={classes.formWrapper}>
@@ -17,10 +16,10 @@ export default function AddPatientForm() {
         <Link to="/dashboard">Shri Krishna Hospital &nbsp;</Link>/&nbsp; Patient
         Dashboard
       </div>
-      <Form className={classes.formSection}>
+      <form className={classes.formSection}>
         <div className={classes.patientEntry}>
           <input
-            name="patientName"
+            name="patId"
             type="text"
             placeholder="Enter Code to search patient"
             className={classes.inputField}
@@ -33,9 +32,13 @@ export default function AddPatientForm() {
           </button>
         </div>
         <div>
-          <button className={classes.resetButton}>Reset All</button>
+          <Link to="/dashboard">
+            <button type="button" className={classes.resetButton}>
+              Reset All
+            </button>
+          </Link>
         </div>
-      </Form>
+      </form>
     </div>
   );
 }
