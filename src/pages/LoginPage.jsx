@@ -3,6 +3,7 @@ import { IoIosLock } from "react-icons/io";
 import ohLogo from "../assets/oh_logo.jpg";
 import { motion } from "framer-motion";
 import { Link, Form, redirect } from "react-router-dom";
+import { url } from "../components/PatientLayout/url";
 export default function LoginPage() {
   /* const email = useRef(null);
   const password = useRef(null);
@@ -90,36 +91,6 @@ export default function LoginPage() {
   );
 }
 
-/*export async function action({ request }) {
-  const data = await request.formData();
-  const email = data.get("email");
-  const password = data.get("password");
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    return redirect("/dashboard");
-  } catch (err) {
-    console.error(err);
-  }
-  return null;
-}
-export async function loader() {
-  const data = await request.formData();
-  const dataToSend = {
-    name: data.get("userName"),
-    password: data.get("password"),
-  };
-  console.log(dataToSend);
-  const response = await fetch("http://localhost:3002/Auth/loginAuth");
-  console.log("sending");
-  if (!response.ok) {
-    throw new Error("Faild to fetch data");
-  }
-  const resData = await response.json();
-  console.log(resData);
-
-  return redirect("dashboard");
-}*/
-
 export async function action({ request }) {
   const data = await request.formData();
 
@@ -130,23 +101,23 @@ export async function action({ request }) {
   console.log("Data to send");
   console.log(dataToSend);
   try {
-    const response = await fetch(
-      "https://2fff-2402-3a80-41c3-d684-edaa-75be-1878-d6f7.ngrok-free.app/authentication/authenticate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      }
-    );
+    const response = await fetch(`${url}/authentication/authenticate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    });
     console.log(dataToSend);
-    if (response.ok) {
+    const resData = await response.json();
+    const token = resData.accessToken;
+    localStorage.setItem("token", token);
+    if (response.ok && token) {
       return redirect("/dashboard");
     }
     return response;
   } catch (err) {
     console.log(err);
+    return err;
   }
-  return null;
 }

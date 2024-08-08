@@ -1,5 +1,6 @@
 import { Link, Form, json, redirect } from "react-router-dom";
 import classes from "./AddMedicine.module.css";
+import { url } from "./PatientLayout/url";
 export default function AddMedicine() {
   return (
     <div className={classes.mainWrapper}>
@@ -86,15 +87,12 @@ export async function action({ request }) {
     shortDesc: data.get("medicineShortDesc"),
   };
   console.log(dataToSend);
-  const response = await fetch(
-    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Medicine/addMedicine ",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataToSend),
-    }
-  );
+  const response = await fetch(`${url}/Medicine/addMedicine`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dataToSend),
+  });
   return response.json(), redirect("/dashboard/medicine");
 }

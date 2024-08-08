@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import classes from "./Medicine.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
+import { url } from "./PatientLayout/url";
 export default function Medicine() {
   const medicineList = useLoaderData();
   console.log(medicineList);
@@ -60,10 +61,9 @@ export default function Medicine() {
 }
 
 export async function loader() {
-  const response = await fetch(
-    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Medicine/loadAllMedicines",
-    { method: "POST" }
-  );
+  const response = await fetch(`${url}/Medicine/loadAllMedicines`, {
+    method: "POST",
+  });
   console.log("data Fetched");
   const resData = response.json();
   console.log(resData);

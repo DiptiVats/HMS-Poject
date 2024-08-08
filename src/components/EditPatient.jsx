@@ -1,29 +1,43 @@
-import classes from "./PatientAdd.module.css";
-import { Form, json, redirect, useActionData } from "react-router-dom";
+import classes from "./AddPatient.module.css";
+import { Form, redirect, useRouteLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
-export default function PatientAdd() {
+import { url } from "./PatientLayout/url";
+
+export default function EditPatient() {
+  const patientDataToEdit = useRouteLoaderData("patientData");
   return (
     <div className={classes.mainWrapper}>
       <div>
-        <div className={classes.patientText}>Add Patient</div>
+        <div className={classes.patientText}>Edit Patient</div>
       </div>
       <div className={classes.hospitalName}>
-        <Link to="/dashboard">Shri Krishna Hospital &nbsp;</Link>/&nbsp; Add
+        <Link to="/dashboard">Shri Krishna Hospital &nbsp;</Link>/&nbsp; Edit
         Patient
       </div>
       <Form method="post">
         {/* ---------------------first grid ----------------*/}
         <div className={classes.firstGrid}>
-          <input type="text" name="firstName" placeholder="First Name*" />
-          <input type="text" name="secondName" nameplaceholder="Last Name*" />
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name*"
+            required
+          />
+          <input
+            type="text"
+            name="secondName"
+            nameplaceholder="Last Name*"
+            required
+          />
         </div>
         {/* --------------------- second grid ----------------*/}
         <div className={classes.secondGrid}>
           <input
             type="number"
             name="age"
-            placeholder="Age*"
+            defaultValue={patientDataToEdit.age}
             className={classes.firstGridInp}
+            required
           />
 
           <div>
@@ -34,7 +48,12 @@ export default function PatientAdd() {
             <label htmlFor="female"> Female </label>
           </div>
 
-          <input type="text" name="address" placeholder="Address*" />
+          <input
+            type="text"
+            name="address"
+            defaultValue={patientDataToEdit.address}
+            required
+          />
         </div>
         {/* --------------------- third grid ----------------*/}
         <div className={classes.thirdGrid}>
@@ -72,7 +91,7 @@ export default function PatientAdd() {
         {/* --------------------- sixth grid ----------------*/}
 
         <div className={classes.sixthGrid}>
-          <Link to="..">
+          <Link to="/dashboard">
             <button type="button">Cancel</button>
           </Link>
           <button type="submit">Submit</button>
@@ -102,21 +121,38 @@ export async function action({ request }) {
   };
   console.log(dataToSend);
   try {
-    const response = await fetch(
-      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/registerPatient",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      }
-    );
+    const response = await fetch(`${url}/Patient/registerPatient`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    });
     console.log(response);
     return redirect("/dashboard");
   } catch (err) {
     console.log(err);
   }
-  console.log(dataToSend);
-  return dataToSend;
 }
+
+/*export async function loader({ request }) {
+  const CurrentUrl = new URL(request.url);
+  const param = Object.fromEntries(CurrentUrl.searchParams.entries());
+  const patId = param.patientId;
+  console.log(patId);
+  try {
+    const response = await fetch(`${url}/Patient/loadPatient`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ patId: patId }),
+    });
+    const resData = await response.json();
+    console.log(resData);
+    return resData;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+}*/

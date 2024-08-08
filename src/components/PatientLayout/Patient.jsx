@@ -2,10 +2,21 @@ import { FaEdit } from "react-icons/fa";
 import { SlExclamation } from "react-icons/sl";
 import classes from "./Patient.module.css";
 import AddPatientForm from "./AddPatientForm";
-import { Link, useLoaderData } from "react-router-dom";
+import {
+  Link,
+  redirect,
+  useNavigate,
+  useRouteLoaderData,
+} from "react-router-dom";
+import { useEffect } from "react";
 export default function Patient() {
-  const Data = useLoaderData();
-  const patientData = Data;
+  const patientData = useRouteLoaderData("patientData");
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (!token) {
+      return redirect("/");
+    }
+  }, [token]);
 
   console.log(patientData);
   return (
@@ -76,7 +87,13 @@ export default function Patient() {
                     </Link>
                   </td>
                   <td>
-                    <FaEdit className={classes.editIcon} />
+                    <span>
+                      <Link
+                        to={`/dashboard/edit-patient?patId=${data.tokenId}`}
+                      >
+                        <FaEdit className={classes.editIcon} />
+                      </Link>
+                    </span>
                   </td>
                 </tr>
               ))
@@ -95,46 +112,4 @@ export default function Patient() {
       </div>
     </div>
   );
-}
-
-/*export async function loader() {
-  const patientData = collection(db, "PatientData");
-  try {
-    const data = await getDocs(patientData);
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-}
-*/
-
-export async function loader({ request }) {
-  const CurrentUrl = new URL(request.url);
-  const param = Object.fromEntries(CurrentUrl.searchParams.entries());
-  console.log(param);
-  let Url =
-    "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadAllPatient";
-  let Body = {};
-  if (param.patId) {
-    Url =
-      "https://ef56-2401-4900-8842-6427-141-d781-b499-d907.ngrok-free.app/Patient/loadPatient";
-    Body = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(param),
-    };
-  }
-  try {
-    console.log("Fetching patient data......");
-    const response = await fetch(Url, {
-      method: "POST",
-      ...Body,
-    });
-    const resData = await response.json();
-    return resData;
-  } catch (err) {
-    console.log(err);
-    return err;
-  }
 }

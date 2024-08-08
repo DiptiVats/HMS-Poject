@@ -1,10 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import LoginPage, { action as loginFun } from "./pages/LoginPage";
-import DashBoardLayoutPage from "./pages/DashBoardLayoutPage";
-import Patient, {
+import DashBoardLayoutPage, {
   loader as patientFun,
-} from "./components/PatientLayout/Patient";
+} from "./pages/DashBoardLayoutPage";
+import Patient from "./components/PatientLayout/Patient";
+import AddPatient, { action as patientAddFun } from "./components/AddPatient";
 import Medicine, { loader as medicineListFun } from "./components/Medicine";
 import AddMedicine, {
   action as addMedicineFun,
@@ -13,24 +14,33 @@ import AddMedicine, {
 import IPD_Register from "./components/IPD_Register";
 import Payment, { loader as paymentFun } from "./components/Payment";
 import Reprint from "./components/Reprint";
-import PatientAdd, { action as patientAddFun } from "./components/PatientAdd";
 import "firebase/auth";
 import MakePayment from "./components/MakePayment";
 import Admit from "./components/Admit";
 import Consent from "./components/Consent";
 import OPD_Main from "./components/OPD/OPD_Main";
+import EditPatient, {
+  action as editPatientFun,
+} from "./components/EditPatient";
 
 const router = createBrowserRouter([
   { path: "", element: <LoginPage />, action: loginFun },
   {
     path: "dashboard",
     element: <DashBoardLayoutPage />,
+    id: "patientData",
+    loader: patientFun,
     children: [
-      { path: "", element: <Patient />, loader: patientFun },
+      { path: "", element: <Patient /> },
       {
         path: "/dashboard/add-patient",
-        element: <PatientAdd />,
+        element: <AddPatient />,
         action: patientAddFun,
+      },
+      {
+        path: "/dashboard/edit-patient",
+        element: <EditPatient />,
+        action: editPatientFun,
       },
       { path: "medicine", element: <Medicine />, loader: medicineListFun },
       {
